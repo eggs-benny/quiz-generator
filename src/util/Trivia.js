@@ -1,8 +1,10 @@
+const numberQs = `?limit=5`
+
 export const Trivia = {
-  async questions() {
+  async results() {
     try {
       const res = await fetch(
-        `https://the-trivia-api.com/api/questions?limit=3`
+        `https://the-trivia-api.com/api/questions${numberQs}`
       );
       const jsonRes = await res.json();
 
@@ -10,9 +12,16 @@ export const Trivia = {
         return console.error('No questions found');
       }
 
-      console.log(
-       jsonRes
-      );
+      return jsonRes.map((result) => {
+          return {
+            id: result.id,
+            correct: result.correctAnswer,
+            incorrect1: result.incorrectAnswers[0],
+            incorrect2: result.incorrectAnswers[1],
+            incorrect3: result.incorrectAnswers[2],
+            question: result.question
+          };
+        });
     } catch (error) {
       console.error(error);
     }
