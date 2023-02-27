@@ -9,10 +9,7 @@ export function Quiz({ questions }) {
           return (
             <Question
               key={question.id}
-              correct={question.correct}
-              incorrect1={question.incorrect1}
-              incorrect2={question.incorrect2}
-              incorrect3={question.incorrect3}
+              options={question.options}
               question={question.question}
             />
           );

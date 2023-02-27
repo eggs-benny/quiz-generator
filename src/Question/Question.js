@@ -1,15 +1,20 @@
 import './Question.css';
 import { MultiChoice } from '../MultiChoice/MultiChoice';
 
-export function Question({question, correct, incorrect1, incorrect2, incorrect3}) {
+export function Question({ question, options }) {
   return (
     <div>
       <div className="Question">Question: {question}</div>
       <div className="Answers">
-        <MultiChoice answer={correct}/>
-        <MultiChoice answer={incorrect1}/>
-        <MultiChoice answer={incorrect2}/>
-        <MultiChoice answer={incorrect3}/>
+        {options.map((option) => {
+          return (
+            <MultiChoice
+              key={option.id}
+              answer={option.answer}
+              isCorrect={option.isCorrect}
+            />
+          );
+        })}
       </div>
     </div>
   );

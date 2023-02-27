@@ -1,4 +1,4 @@
-const numberQs = `?limit=5`
+const numberQs = `?limit=5`;
 
 export const Trivia = {
   async results() {
@@ -13,15 +13,17 @@ export const Trivia = {
       }
 
       return jsonRes.map((result) => {
-          return {
-            id: result.id,
-            correct: result.correctAnswer,
-            incorrect1: result.incorrectAnswers[0],
-            incorrect2: result.incorrectAnswers[1],
-            incorrect3: result.incorrectAnswers[2],
-            question: result.question
-          };
-        });
+        return {
+          id: result.id,
+          options: [
+            { id: 0, answer: result.correctAnswer, isCorrect: true},
+            { id: 1, answer: result.incorrectAnswers[0], isCorrect: false},
+            { id: 2, answer: result.incorrectAnswers[1], isCorrect: false},
+            { id: 3, answer: result.incorrectAnswers[2], isCorrect: false}
+          ],
+          question: result.question
+        };
+      });
     } catch (error) {
       console.error(error);
     }

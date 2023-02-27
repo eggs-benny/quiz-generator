@@ -1,5 +1,5 @@
 import './MultiChoice.css';
 
-export function MultiChoice({ answer }) {
-  return <div className="MultiChoiceOption"> {answer} </div>;
+export function MultiChoice({ answer, isCorrect }) {
+  return <button className="MultiChoice">  {answer} {isCorrect ? 'true' : 'false'}</button>;
 }
