@@ -1,0 +1,63 @@
+body {
+  background-image: url('./background-image.jpg');
+  background-size: cover;
+  background-repeat: repeat;
+}
+
+html,
+#root {
+  height: 100%;
+  width:inherit
+}
+
+html {
+  font-size: 20px;
+}
+
+h1 {
+  padding: 0.77rem 0;
+  background-color: #010c3f;
+  text-align: center;
+  font-family: 'Noticia+Text';
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+h1 .highlight {
+  color: #6c41ec;
+}
+
+h2 {
+  font-family: 'News+Cycle';
+  font-size: 1.55rem;
+}
+
+p {
+  font-family: 'News+Cycle';
+  font-size: .75rem;
+}
+
+.App {
+  height: 100%;
+  padding: 0 50% 60% 17%;
+  font-family: 'News+Cycle';
+  font-weight: 600;
+  color: #fff;
+}
+
+@media only screen and (max-width: 1020px) {
+  .Feed {
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,3 +1,35 @@
+As a trivia fiend
+So I can get my quizzy hit
+I want to answer quiz questions online
+
+As a trivia fiend
+So I can know if I'm right
+I want to see my answer
+
+As a trivia fiend
+So I can do a whole quiz
+I want to play a full quiz
+
+As a trivia fiend
+So I can see how I've done
+I want to see my score
+
+As a trivia fiend
+So I can play more than once
+I want to click to generate a new quiz
+
+As a trivia fiend
+So that I can test myself
+I want to generate a 'hard' quiz
+
+As a trivia host
+So I can plan my own pub quiz
+I want to generate categories
+
+As a trivia fiend
+So I can see how I compare
+I want to see a leaderboard
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
