@@ -1,9 +1,10 @@
 import './Generate.css';
 
-export function Generate() {
+export function Generate({ getQuestions }) {
+
   return (
-    <div className="SearchBar">
-            <button className="Button">
+    <div className="Generate">
+            <button className="Button" onClick={getQuestions}>
         GENERATE NEW QUIZ
       </button>
     </div>

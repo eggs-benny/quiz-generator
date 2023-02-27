@@ -22,7 +22,6 @@ export function App() {
         <span className="highlight">Quizzy </span>Gen Gen
       </h1>
       <div className="App">
-        {Trivia.questions()}
         <Generate getQuestions={results}/>
         <Quiz questions={questions}/>
         <Score />
