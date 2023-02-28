@@ -1,7 +1,7 @@
 import './Quiz.css';
 import { Question } from '../Question/Question';
 
-export function Quiz({ questions, onCorrectAnswer }) {
+export function Quiz({ questions, onCorrectAnswer, onIncorrectAnswer, answerStyling }) {
   return (
     <div className="Quiz">
       {questions.length > 0 ? (
@@ -13,6 +13,8 @@ export function Quiz({ questions, onCorrectAnswer }) {
               question={question.question}
               index={index + 1}
               onCorrectAnswer={() => onCorrectAnswer(question.id)}
+              onIncorrectAnswer={() => onIncorrectAnswer(question.id)}
+              answerStyling={answerStyling}
             />
           );
         })

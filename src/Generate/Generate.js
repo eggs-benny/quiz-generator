@@ -1,10 +1,10 @@
 import './Generate.css';
 
-export function Generate({ getQuestions }) {
+export function Generate({ onGenerateQuiz }) {
 
   return (
     <div className="Generate">
-            <button className="Button" onClick={getQuestions}>
+            <button className="Button" onClick={onGenerateQuiz}>
         GENERATE NEW QUIZ
       </button>
     </div>

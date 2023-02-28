@@ -2,10 +2,15 @@ import './Question.css';
 import { MultiChoice } from '../MultiChoice/MultiChoice';
 import { useState, useEffect } from 'react';
 
-export function Question({ question, options, index, onCorrectAnswer }) {
+export function Question({
+  question,
+  options,
+  index,
+  onCorrectAnswer,
+  onIncorrectAnswer,
+  answerStyling
+}) {
   const [questionNumber, setQuestionNumber] = useState(1);
-
-
 
   function randomize(options) {
     for (let i = options.length - 1; i > 0; i--) {
@@ -17,8 +22,6 @@ export function Question({ question, options, index, onCorrectAnswer }) {
     setQuestionNumber(index);
     randomize(options);
   }, [index, options]);
-
- 
 
   return (
     <div>
@@ -33,6 +36,8 @@ export function Question({ question, options, index, onCorrectAnswer }) {
               option={option.option}
               isCorrect={option.isCorrect}
               onCorrectAnswer={onCorrectAnswer}
+              onIncorrectAnswer={onIncorrectAnswer}
+              answerStyling={answerStyling}
             />
           );
         })}

@@ -8,13 +8,19 @@ import { useState } from 'react';
 export function App() {
   const [questions, setQuestions] = useState([]);
   const [score, setScore] = useState(0);
-  const [correctAnswers, setCorrectAnswers] = useState({})
+  const [correctAnswers, setCorrectAnswers] = useState({});
+  const [incorrectAnswers, setIncorrectAnswers] = useState({});
+  const [answer, setAnswer] = useState('');
+  const [answerStyling, setAnswerStyling] = useState('');
 
-  const results = async () => {
+  const handleGenerateQuiz = async () => {
     try {
       const questionResults = await Trivia.results();
       setQuestions(questionResults);
-  
+      setScore(0);
+      setAnswerStyling('Initial');
+      setCorrectAnswers({});
+      setIncorrectAnswers({});
     } catch (error) {
       console.error(error);
     }
@@ -22,10 +28,20 @@ export function App() {
 
   function handleCorrectAnswer(questionId) {
     if (!correctAnswers[questionId]) {
-    setScore(score + 1);
-    setCorrectAnswers({ ...correctAnswers, [questionId]: true})
+      setScore(score + 1);
+      setAnswer(answer + 'Yes');
+      setAnswerStyling('Green');
+      setCorrectAnswers({ ...correctAnswers, [questionId]: true });
     }
-  };
+  }
+
+  function handleIncorrectAnswer(questionId) {
+    if (!incorrectAnswers[questionId]) {
+      setAnswer(answer + ' ✘');
+      setAnswerStyling('Red');
+      setIncorrectAnswers({ ...incorrectAnswers, [questionId]: true });
+    }
+  }
 
   return (
     <div>
@@ -33,8 +49,13 @@ export function App() {
         <span className="highlight">Quizzy </span>Gen Gen
       </h1>
       <div className="App">
-        <Generate getQuestions={results} />
-        <Quiz questions={questions} onCorrectAnswer={handleCorrectAnswer} />
+        <Generate onGenerateQuiz={handleGenerateQuiz} />
+        <Quiz
+          questions={questions}
+          onCorrectAnswer={handleCorrectAnswer}
+          onIncorrectAnswer={handleIncorrectAnswer}
+          answerStyling={answerStyling}
+        />
         <Score score={score} />
       </div>
     </div>
