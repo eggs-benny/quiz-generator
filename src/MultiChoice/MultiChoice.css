@@ -22,13 +22,13 @@
   width: 10rem;
   padding: .77rem 0;
   border-radius: 54px;
-  background-color: #0fc018;
+  background-color: #010c3f;
   text-align: center;
   font-size: .833rem;
   transition: background-color .25s;
   margin-bottom: 0.33rem;
-  border: 0px;
-  color: #fff;
+  border: 2px;
+  color: #0fc018;
   font-weight: 500;
 }
 
@@ -37,12 +37,12 @@
   width: 10rem;
   padding: .77rem 0;
   border-radius: 54px;
-  background-color: #e11717;
+  background-color: #010c3f;
   text-align: center;
   font-size: .833rem;
   transition: background-color .25s;
   margin-bottom: 0.33rem;
   border: 0px;
-  color: #fff;
+  color: #e11717;
   font-weight: 500;
 }
