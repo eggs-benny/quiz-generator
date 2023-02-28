@@ -8,19 +8,23 @@ import { useState } from 'react';
 export function App() {
   const [questions, setQuestions] = useState([]);
   const [score, setScore] = useState(0);
+  const [correctAnswers, setCorrectAnswers] = useState({})
 
   const results = async () => {
     try {
       const questionResults = await Trivia.results();
       setQuestions(questionResults);
+  
     } catch (error) {
       console.error(error);
     }
   };
 
-  function handleCorrectAnswer() {
+  function handleCorrectAnswer(questionId) {
+    if (!correctAnswers[questionId]) {
     setScore(score + 1);
-    console.log(score);
+    setCorrectAnswers({ ...correctAnswers, [questionId]: true})
+    }
   };
 
   return (

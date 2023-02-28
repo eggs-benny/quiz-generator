@@ -3,7 +3,7 @@ import { MultiChoice } from '../MultiChoice/MultiChoice';
 import { useState, useEffect } from 'react';
 
 export function Question({ question, options, index, onCorrectAnswer }) {
-  const [counter, setCounter] = useState(1);
+  const [questionNumber, setQuestionNumber] = useState(1);
 
 
 
@@ -14,7 +14,7 @@ export function Question({ question, options, index, onCorrectAnswer }) {
     }
   }
   useEffect(() => {
-    setCounter(index);
+    setQuestionNumber(index);
     randomize(options);
   }, [index, options]);
 
@@ -23,7 +23,7 @@ export function Question({ question, options, index, onCorrectAnswer }) {
   return (
     <div>
       <div className="Question">
-        Question {counter}: {question}
+        Question {questionNumber}: {question}
       </div>
       <div className="Answers">
         {options.map((option) => {
