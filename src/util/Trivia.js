@@ -16,10 +16,10 @@ export const Trivia = {
         return {
           id: result.id,
           options: [
-            { id: 0, answer: result.correctAnswer, isCorrect: true},
-            { id: 1, answer: result.incorrectAnswers[0], isCorrect: false},
-            { id: 2, answer: result.incorrectAnswers[1], isCorrect: false},
-            { id: 3, answer: result.incorrectAnswers[2], isCorrect: false}
+            { id: 0, option: result.correctAnswer, isCorrect: true},
+            { id: 1, option: result.incorrectAnswers[0], isCorrect: false},
+            { id: 2, option: result.incorrectAnswers[1], isCorrect: false},
+            { id: 3, option: result.incorrectAnswers[2], isCorrect: false}
           ],
           question: result.question
         };

@@ -1,14 +1,17 @@
 As a trivia fiend
 So I can get my quizzy hit
 I want to answer quiz questions online
+-Done
 
 As a trivia fiend
 So I can know if I'm right
 I want to see my answer
+-Done
 
 As a trivia fiend
 So I can do a whole quiz
 I want to play a full quiz
+-Done
 
 As a trivia fiend
 So I can see how I've done
@@ -17,6 +20,7 @@ I want to see my score
 As a trivia fiend
 So I can play more than once
 I want to click to generate a new quiz
+-Done
 
 As a trivia fiend
 So that I can test myself
@@ -29,6 +33,12 @@ I want to generate categories
 As a trivia fiend
 So I can see how I compare
 I want to see a leaderboard
+
+To Do:
+- Answers change colour
+- Question appears after previous question answered
+- Score shown at end
+- Score shown as you go
 
 # Getting Started with Create React App
 
