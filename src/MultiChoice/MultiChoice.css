@@ -16,3 +16,33 @@
 .MultiChoice:hover {
   background-color: rgba(108, 65, 233, .7);
 }
+
+.MultiChoiceCorrect {
+  cursor: pointer;
+  width: 10rem;
+  padding: .77rem 0;
+  border-radius: 54px;
+  background-color: #0fc018;
+  text-align: center;
+  font-size: .833rem;
+  transition: background-color .25s;
+  margin-bottom: 0.33rem;
+  border: 0px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.MultiChoiceIncorrect {
+  cursor: pointer;
+  width: 10rem;
+  padding: .77rem 0;
+  border-radius: 54px;
+  background-color: #e11717;
+  text-align: center;
+  font-size: .833rem;
+  transition: background-color .25s;
+  margin-bottom: 0.33rem;
+  border: 0px;
+  color: #fff;
+  font-weight: 500;
+}

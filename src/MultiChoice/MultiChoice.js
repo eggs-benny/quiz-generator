@@ -2,11 +2,23 @@ import './MultiChoice.css';
 import { useState } from 'react';
 
 export function MultiChoice({ option, isCorrect }) {
-  const [answer, setAnswer] = useState(option)
+  const [answer, setAnswer] = useState(option);
+  const [className, setClassName] = useState('MultiChoice');
 
   const handleButtonClick = () => {
-    isCorrect ? setAnswer('Correct!') : setAnswer('Incorrect :(')
-  }
+    if (isCorrect) {
+      setAnswer('Correct!');
+      setClassName('MultiChoiceCorrect');
+    } else {
+      setAnswer('Incorrect :(');
+      setClassName('MultiChoiceIncorrect');
+    }
+  };
 
-  return <button className="MultiChoice" onClick={handleButtonClick}>  {answer} </button>;
+  return (
+    <button className={className} onClick={handleButtonClick}>
+      {' '}
+      {answer}{' '}
+    </button>
+  );
 }

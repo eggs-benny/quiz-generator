@@ -35,8 +35,6 @@ So I can see how I compare
 I want to see a leaderboard
 
 To Do:
-- Refactor names
-- Randomize where answers appear
 - Answers change colour
 - Question appears after previous question answered
 - Score shown at end
