@@ -10,11 +10,11 @@ export function App() {
   const [score, setScore] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState({})
 
-  const results = async () => {
+  const handleGenerateQuiz = async (difficulty) => {
     try {
-      const questionResults = await Trivia.results();
+      const questionResults = await Trivia.results(difficulty);
       setQuestions(questionResults);
-  
+      setScore(0)
     } catch (error) {
       console.error(error);
     }
@@ -33,7 +33,7 @@ export function App() {
         <span className="highlight">Quizzy </span>Gen Gen
       </h1>
       <div className="App">
-        <Generate getQuestions={results} />
+        <Generate handleGenerateQuiz={handleGenerateQuiz} />
         <Quiz questions={questions} onCorrectAnswer={handleCorrectAnswer} />
         <Score score={score} />
       </div>

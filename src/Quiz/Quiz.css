@@ -1,11 +1,10 @@
 .Quiz {
   display:flex;
   flex-direction: column;
-
+  margin-top: 2.5rem;
   overflow-y: scroll;
   width: 40%;
   min-width: 550px;
-  max-height: 950px;
   padding: 2.27rem 2.27rem;
   background-color: rgba(1, 12, 63, 0.7);
   box-shadow: 0 4px 2px 2px #000000;

@@ -8,12 +8,39 @@
   text-align: center;
   font-size: .833rem;
   transition: background-color .25s;
-  margin-bottom: 0.33rem;
   border: 0px;
   color: #fff;
   font-weight: 500;
 }
 
-.Button:hover {
-  background-color: rgba(108, 65, 233, .7);
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  border-radius: 54px;
 }
+
+/* Links inside the dropdown */
+.dropdown-content button {
+  flex-direction: row;
+  cursor: pointer;
+  border:#010c3f;
+  border-width: 2px;
+  width: 10rem;
+  color: rgb(255, 255, 255);
+  font-size: .833rem;
+  transition: background-color .25s;
+  padding: 12px 16px;
+  background-color: #04AA6D;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content :hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .Button {background-color: #3e8e41;}

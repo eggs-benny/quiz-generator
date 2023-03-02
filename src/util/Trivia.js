@@ -1,13 +1,13 @@
 const numberQs = `?limit=5`;
 
 export const Trivia = {
-  async results() {
+  async results(difficulty) {
     try {
+      console.log(`https://the-trivia-api.com/api/questions${numberQs}${difficulty}`)
       const res = await fetch(
-        `https://the-trivia-api.com/api/questions${numberQs}`
+        `https://the-trivia-api.com/api/questions${numberQs}${difficulty}`
       );
       const jsonRes = await res.json();
-
       if (!jsonRes) {
         return console.error('No questions found');
       }
