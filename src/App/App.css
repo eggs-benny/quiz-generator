@@ -1,7 +1,5 @@
 body {
-  background-image: url('./background-image.jpg');
-  background-size: cover;
-  background-repeat: repeat;
+background-color:lavender;
 }
 
 html,
@@ -16,7 +14,7 @@ html {
 
 h1 {
   padding: 0.77rem 0;
-  background-color: #010c3f;
+  background-color:indigo;
   text-align: center;
   font-family: 'Noticia+Text';
   font-size: 2.5rem;
@@ -24,7 +22,7 @@ h1 {
 }
 
 h1 .highlight {
-  color: #6c41ec;
+  color:coral;
 }
 
 h2 {

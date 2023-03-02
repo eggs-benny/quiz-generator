@@ -3,7 +3,7 @@
   width: 10rem;
   padding: .77rem 0;
   border-radius: 54px;
-  background-color: #010c3f;
+  background-color:indigo;
   text-align: center;
   font-size: .833rem;
   transition: background-color .25s;
@@ -14,7 +14,7 @@
 }
 
 .MultiChoice:hover {
-  background-color: rgba(108, 65, 233, .7);
+  background-color:coral;
 }
 
 .MultiChoiceCorrect {
@@ -22,13 +22,13 @@
   width: 10rem;
   padding: .77rem 0;
   border-radius: 54px;
-  background-color: #010c3f;
+  background-color:chartreuse;
   text-align: center;
   font-size: .833rem;
   transition: background-color .25s;
   margin-bottom: 0.33rem;
   border: 2px;
-  color: #0fc018;
+  color:limegreen;
   font-weight: 500;
 }
 
@@ -37,12 +37,13 @@
   width: 10rem;
   padding: .77rem 0;
   border-radius: 54px;
-  background-color: #010c3f;
+  background-color:crimson;
   text-align: center;
   font-size: .833rem;
   transition: background-color .25s;
   margin-bottom: 0.33rem;
   border: 0px;
-  color: #e11717;
+  color:maroon;
+  text-decoration: line-through;
   font-weight: 500;
 }

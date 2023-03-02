@@ -2,16 +2,16 @@ import './MultiChoice.css';
 import { useState } from 'react';
 
 export function MultiChoice({ option, isCorrect, onCorrectAnswer }) {
-  const [answer, setAnswer] = useState(option);
+  // const [answer, setAnswer] = useState(option);
   const [className, setClassName] = useState('MultiChoice');
 
   const handleButtonClick = () => {
     if (isCorrect) {
-      setAnswer(answer + ' ✔');
+      // setAnswer(answer);
       setClassName('MultiChoiceCorrect');
       onCorrectAnswer();
     } else {
-      setAnswer(answer + ' ✘');
+      // setAnswer(answer);
       setClassName('MultiChoiceIncorrect');
     }
   };
@@ -19,7 +19,7 @@ export function MultiChoice({ option, isCorrect, onCorrectAnswer }) {
   return (
     <button className={className} onClick={handleButtonClick}>
       {' '}
-      {answer}{' '}
+      {option}{' '}
     </button>
   );
 }
