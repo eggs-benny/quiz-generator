@@ -3,12 +3,13 @@ import { Generate } from '../Generate/Generate';
 import { Quiz } from '../Quiz/Quiz';
 import { Score } from '../Score/Score';
 import { Trivia } from '../util/Trivia';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export function App() {
   const [questions, setQuestions] = useState([]);
   const [score, setScore] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState({});
+  const [isMobile, setIsMobile] = useState(false);
 
   async function handleGenerateQuiz(difficulty) {
     try {
@@ -27,8 +28,26 @@ export function App() {
     }
   }
 
+  useEffect(() => {
+    function handleResize() {
+      setIsMobile(window.innerWidth <= 600);
+    }
+    
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+
   return (
     <div>
+      <div>
+      {isMobile ? <p>This is a mobile device</p> : <p>This is not a mobile device</p>}
+    </div>
       <h1>
         <span className="highlight">Trivia </span>Forever
       </h1>
