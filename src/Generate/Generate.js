@@ -1,52 +1,39 @@
 import './Generate.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export function Generate({ handleGenerateQuiz }) {
   const [difficulty, setDifficulty] = useState('');
 
-  const difficultySelector = (selectedDifficulty) => {
-    switch (selectedDifficulty) {
-      case 'easy':
-        console.log('easy');
-        setDifficulty('&difficulty=easy');
-        break;
-      case 'medium':
-        console.log('medium');
-        setDifficulty('&difficulty=medium');
-        break;
-      case 'hard':
-        console.log('hard');
-        setDifficulty('&difficulty=hard');
-        break;
-      default:
-        break;
+  function difficultySelector(selectedDifficulty) {
+    if (selectedDifficulty === difficulty) {
+      setDifficulty('');
     }
+    const difficultyLevel = `&difficulty=${selectedDifficulty}`;
+    setDifficulty(difficultyLevel);
     handleGenerateQuiz(difficulty);
-  };
+  }
+
+  const difficultyLevels = ['easy', 'medium', 'hard'];
+
+  useEffect(() => {
+    handleGenerateQuiz(difficulty);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [difficulty]);
 
   return (
     <div className="Generate">
       <div className="dropdown">
         <button className="Button">GENERATE NEW QUIZ</button>
         <div className="dropdown-content">
-          <button
-            className="dropbtn"
-            onClick={() => difficultySelector('easy')}
-          >
-            Easy
-          </button>
-          <button
-            className="dropbtn"
-            onClick={() => difficultySelector('medium')}
-          >
-            Medium
-          </button>
-          <button
-            className="dropbtn"
-            onClick={() => difficultySelector('hard')}
-          >
-            Hard
-          </button>
+          {difficultyLevels.map((level) => (
+            <button
+              key={level}
+              className="dropbtn"
+              onClick={() => difficultySelector(level)}
+            >
+              {level}
+            </button>
+          ))}
         </div>
       </div>
     </div>

@@ -10,7 +10,7 @@ export function App() {
   const [score, setScore] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState({});
 
-  const handleGenerateQuiz = async (difficulty) => {
+  async function handleGenerateQuiz(difficulty) {
     try {
       const questionResults = await Trivia.results(difficulty);
       setQuestions(questionResults);

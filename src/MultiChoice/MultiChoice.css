@@ -1,5 +1,6 @@
 .MultiChoice {
   cursor: pointer;
+  font-family: 'Josefin Sans';
   width: 10rem;
   padding: .77rem 0;
   border-radius: 54px;
