@@ -49,26 +49,17 @@ p {
   color: #fff;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 400px) {
   h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   h2 {
-    font-size: 1.25rem;
+    font-size: 0.75rem;
   }
   p {
-    font-size: 0.6rem;
+    font-size: 0.3rem;
   }
   .App {
     padding: 0 10% 20% 2.5%;
-  }
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
   }
 }
