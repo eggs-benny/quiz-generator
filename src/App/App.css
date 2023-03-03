@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
 body {
-background-color:lavender;
+  background-color: lavender;
 }
 
 html,
 #root {
   height: 100%;
-  width:inherit
+  width: inherit;
 }
 
 html {
@@ -16,7 +16,7 @@ html {
 
 h1 {
   padding: 0.77rem 0;
-  background-color:indigo;
+  background-color: indigo;
   text-align: center;
   font-family: 'Josefin Sans';
   font-size: 2.5rem;
@@ -24,7 +24,7 @@ h1 {
 }
 
 h1 .highlight {
-  color:coral;
+  color: coral;
 }
 
 h2 {
@@ -34,7 +34,7 @@ h2 {
 
 p {
   font-family: 'Josefin Sans';
-  font-size: .75rem;
+  font-size: 0.75rem;
 }
 
 .App {
@@ -49,13 +49,20 @@ p {
   color: #fff;
 }
 
-@media only screen and (max-width: 1020px) {
-  .Feed {
-    align-items: center;
-    flex-direction: column;
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.25rem;
+  }
+  p {
+    font-size: 0.6rem;
+  }
+  .App {
+    padding: 0 10% 20% 2.5%;
   }
 }
-
 
 @keyframes App-logo-spin {
   from {
