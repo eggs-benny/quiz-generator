@@ -1,5 +1,4 @@
 import './MultiChoice.css';
-import { useState } from 'react';
 
 export function MultiChoice({
   option,
@@ -7,19 +6,17 @@ export function MultiChoice({
   onCorrectAnswer,
   onIncorrectAnswer,
   isAnswered,
-  selected,
   className,
   setSelected
 }) {
   function handleButtonClick() {
     if (!isAnswered) {
       if (isCorrect) {
-        setSelected(true);
         onCorrectAnswer();
       } else {
-        setSelected(true);
         onIncorrectAnswer();
       }
+      setSelected(true);
     }
   }
 
@@ -27,8 +24,6 @@ export function MultiChoice({
     <button
       className={className}
       onClick={handleButtonClick}
-      disabled={isAnswered}
-      style={selected ? { backgroundColor: '#ff6961' } : {}}
     >
       {option}
     </button>

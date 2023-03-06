@@ -14,7 +14,6 @@ export function Question({
   const [isAnswered, setIsAnswered] = useState(false);
   const [selected, setSelected] = useState(null);
 
-
   function randomize(options) {
     for (let i = options.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -25,8 +24,6 @@ export function Question({
   useEffect(() => {
     setQuestionNumber(index);
     randomize(options);
-
-
   }, [index, options]);
 
   const handleCorrectAnswer = () => {
@@ -63,7 +60,6 @@ export function Question({
               onCorrectAnswer={handleCorrectAnswer}
               onIncorrectAnswer={handleIncorrectAnswer}
               isAnswered={isAnswered}
-              selected={selected === option.id}
               className={className}
               setSelected={() => setSelected(option.id)}
             />
