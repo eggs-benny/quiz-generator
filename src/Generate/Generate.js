@@ -23,7 +23,7 @@ export function Generate({ handleGenerateQuiz }) {
   return (
     <div className="Generate">
       <div className="dropdown">
-        <button className="Button">GENERATE NEW QUIZ</button>
+        <button className="Button">ONE MORE QUIZ</button>
         <div className="dropdown-content">
           {difficultyLevels.map((level) => (
             <button

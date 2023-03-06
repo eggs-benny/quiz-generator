@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react';
 export function App() {
   const [questions, setQuestions] = useState([]);
   const [score, setScore] = useState(0);
+  const [answered, setAnswered] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState({});
   const [incorrectAnswers, setIncorrectAnswers] = useState({});
   const [isMobile, setIsMobile] = useState(false);
@@ -17,6 +18,7 @@ export function App() {
       const questionResults = await Trivia.results(difficulty);
       setQuestions(questionResults);
       setScore(0);
+      setAnswered(0)
     } catch (error) {
       console.error(error);
     }
@@ -25,13 +27,15 @@ export function App() {
   function handleCorrectAnswer(questionId) {
     if (!correctAnswers[questionId]) {
       setScore(score + 1);
-      setCorrectAnswers({ ...correctAnswers, [questionId]: true });
+      setAnswered(answered + 1);
+      setCorrectAnswers({ ...correctAnswers });
     }
   }
 
   function handleIncorrectAnswer(questionId) {
     if (!incorrectAnswers[questionId]) {
-      setIncorrectAnswers({ ...incorrectAnswers, [questionId]: true });
+      setAnswered(answered + 1)
+      setIncorrectAnswers({ ...incorrectAnswers });
     }
   }
 
@@ -59,9 +63,9 @@ export function App() {
         <span className="highlight">Trivia </span>Forever
       </h1>
       <div className="App">
-        <Generate handleGenerateQuiz={handleGenerateQuiz} />
-        <Score score={score} />
         <Quiz questions={questions} onCorrectAnswer={handleCorrectAnswer} onIncorrectAnswer={handleIncorrectAnswer}/>
+        <Score score={score} answered={answered}/>
+        <Generate handleGenerateQuiz={handleGenerateQuiz} />
       </div>
     </div>
   );

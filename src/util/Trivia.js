@@ -1,4 +1,4 @@
-const numberQs = `?limit=5`;
+const numberQs = `?limit=10`;
 
 export const Trivia = {
   async results(difficulty) {
