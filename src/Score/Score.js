@@ -1,9 +1,11 @@
 import './Score.css';
 
 export function Score({ score, answered }) {
+  
+  
   const percent = Math.ceil((score / answered) * 100);
   let comment = '';
-  if (answered >= 10) {
+
   switch (true) {
     case percent < 40:
       comment = 'Not good';
@@ -20,13 +22,12 @@ export function Score({ score, answered }) {
     default:
       comment = 'Awful';
       break;
-  }
 }
 
   return (
     <div className="Score">
-      <h2>{percent}% correct</h2>
-      <h2>{comment}</h2>
+      {answered !== 0 && <h2>{percent}% correct</h2>}
+      {answered >= 10 && <h2>{comment}</h2>}
     </div>
   );
 }
