@@ -20,6 +20,7 @@
   display: none;
   position: absolute;
   border-radius: 54px;
+  margin-bottom: 5rem;
 }
 
 /* Links inside the dropdown */
@@ -34,7 +35,6 @@
   padding: 12px 16px;
   background-color:indigo;
   display: block;
-  margin-bottom: 5rem;
 }
 
 /* Change color of dropdown links on hover */
