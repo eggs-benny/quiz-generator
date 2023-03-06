@@ -11,7 +11,6 @@
   border: 0px;
   color: #fff;
   font-weight: 500;
-  margin-bottom: 5rem;
   box-shadow: 0 4px 2px 2px #c33434;
 }
 
@@ -35,6 +34,7 @@
   padding: 12px 16px;
   background-color:indigo;
   display: block;
+  margin-bottom: 5rem;
 }
 
 /* Change color of dropdown links on hover */
