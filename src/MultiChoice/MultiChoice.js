@@ -5,25 +5,32 @@ export function MultiChoice({
   option,
   isCorrect,
   onCorrectAnswer,
-  isAnswered
+  onIncorrectAnswer,
+  isAnswered,
+  selected,
+  className,
+  setSelected
 }) {
-  const [className, setClassName] = useState('MultiChoice');
-
   function handleButtonClick() {
     if (!isAnswered) {
       if (isCorrect) {
-        setClassName('MultiChoiceCorrect');
+        setSelected(true);
         onCorrectAnswer();
       } else {
-        setClassName('MultiChoiceIncorrect');
+        setSelected(true);
+        onIncorrectAnswer();
       }
     }
   }
 
   return (
-    <button className={className} onClick={handleButtonClick}>
-      {' '}
-      {option}{' '}
+    <button
+      className={className}
+      onClick={handleButtonClick}
+      disabled={isAnswered}
+      style={selected ? { backgroundColor: '#ff6961' } : {}}
+    >
+      {option}
     </button>
   );
 }

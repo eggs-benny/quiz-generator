@@ -9,6 +9,7 @@ export function App() {
   const [questions, setQuestions] = useState([]);
   const [score, setScore] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState({});
+  const [incorrectAnswers, setIncorrectAnswers] = useState({});
   const [isMobile, setIsMobile] = useState(false);
 
   async function handleGenerateQuiz(difficulty) {
@@ -25,6 +26,12 @@ export function App() {
     if (!correctAnswers[questionId]) {
       setScore(score + 1);
       setCorrectAnswers({ ...correctAnswers, [questionId]: true });
+    }
+  }
+
+  function handleIncorrectAnswer(questionId) {
+    if (!incorrectAnswers[questionId]) {
+      setIncorrectAnswers({ ...incorrectAnswers, [questionId]: true });
     }
   }
 
@@ -54,7 +61,7 @@ export function App() {
       <div className="App">
         <Generate handleGenerateQuiz={handleGenerateQuiz} />
         <Score score={score} />
-        <Quiz questions={questions} onCorrectAnswer={handleCorrectAnswer} />
+        <Quiz questions={questions} onCorrectAnswer={handleCorrectAnswer} onIncorrectAnswer={handleIncorrectAnswer}/>
       </div>
     </div>
   );
